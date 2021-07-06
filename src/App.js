@@ -15,7 +15,7 @@ function App() {
     const getData = async()=>{
       const resIp = await fetch(`https://api.ipify.org?format=json`).then(res => res.json())
       const ip = resIp.ip
-      const url = `http://api.weatherapi.com/v1/current.json?key=640ff40b447a40a38ae163312210507&q=${ip}`
+      const url = `https://api.weatherapi.com/v1/current.json?key=640ff40b447a40a38ae163312210507&q=${ip}`
       const response = await fetch(url).then(res => res.json())
       const data = response.current
       setImg(data.condition.icon)
