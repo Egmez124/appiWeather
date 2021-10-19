@@ -15,12 +15,14 @@ const WeatherBox = ({current, location, condition, handleSearch}) => {
         <div className="card-body">
             <div className="header">
                 <h1>Weather APP</h1>
-                <input className="input" placeholder="introduce un pais..." onChange={(e)=>{setValue(e.target.value)}} value={value}/>
-                <button onClick={()=>{handleSearch(value)}}>Search</button>
+                <input className="input" placeholder="introduce un pais o ciudad..." onChange={(e)=>{setValue(e.target.value)}} value={value}/>
+                <button className="search-btn" onClick={()=>{handleSearch(value)}}>Search</button>
             </div>
             <div className="card-temp">
                 <img src={condition.icon} alt={'condition.icon'} className="icon"></img>
-                <p class="card-text">{location.country}</p>
+                <p>{location.country}</p>
+                <p>{location.region}</p>
+                <p>{location.name}</p>
                 {temp?<p>{current.temp_c}ºC</p>:<p>{current.temp_f}ºF</p>}
                 <button className="boton" onClick={changeTemp}>{temp?'Cambiar a farenheit':'Cambiar a centigrados'}</button>
             </div>
@@ -29,6 +31,7 @@ const WeatherBox = ({current, location, condition, handleSearch}) => {
                 <p>{condition.text}</p>
                 <p>Wind speed kph: {current.wind_mph}</p>
                 <p>Clouds: {current.cloud}%</p>
+                <p>Precipitation: {current.precip_mm} mm%</p>
                 <p>Pressure (mb): {current.pressure_in}</p>
             </div>
             {/* <div></div> */}
