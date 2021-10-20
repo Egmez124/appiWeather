@@ -34,7 +34,6 @@ const WeatherBox = ({current, location, condition, handleSearch}) => {
                 <p>Precipitation: {current.precip_mm} mm%</p>
                 <p>Pressure (mb): {current.pressure_in}</p>
             </div>
-            {/* <div></div> */}
         </div>
     )
 }

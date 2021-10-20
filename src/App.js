@@ -24,7 +24,7 @@ function App() {
   },[])
   
   const handleSearch = async (country)=>{
-    const url = `http://api.weatherapi.com/v1/current.json?key=640ff40b447a40a38ae163312210507&q=${country}&aqi=no`;
+    const url = `https://api.weatherapi.com/v1/current.json?key=640ff40b447a40a38ae163312210507&q=${country}&aqi=no`;
     const response = await axios.get(url);
     console.log(response);
     setCurrent(response.data.current);
